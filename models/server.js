@@ -26,6 +26,8 @@ class Server {
 	sockets() {
 		this.io.on('connection', (client) => {
 			console.log('Client connect!');
+
+			client.emit("newInstance",{ip:"ip", port: 'port' });
 		});
 	}
 
